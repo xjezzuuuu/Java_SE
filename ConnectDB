@@ -1,0 +1,37 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package clase_04_22_2019.Metodos;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+/**
+ *
+ * @author 18222393-k
+ */
+public class ConnectDB {
+    public Connection connect(){
+        Connection cn = null;
+        String controlador = "org.apache.derby.jdbc.ClientDriver";
+        String url = "jdbc:derby://localhost:1527/Seccion700 [alumno700 en ALUMNO700]";
+        String user = "alumno700";
+        String password = "12345";
+        
+        try {
+            Class.forName(controlador);
+            cn = DriverManager.getConnection(url, user, password);
+            System.out.println("¡Conexión exitosa!");
+        } catch (SQLException sqle) {
+            System.out.println("¡Conexión rechazada!");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return cn;
+    }
+}
