@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package clase_04_22_2019.Metodos;
+package metodos;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,15 +13,15 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author 18222393-k
+ * @author 
  */
 public class ConnectDB {
     public Connection connect(){
         Connection cn = null;
-        String controlador = "org.apache.derby.jdbc.ClientDriver";
-        String url = "jdbc:derby://localhost:1527/Seccion700 [alumno700 en ALUMNO700]";
-        String user = "alumno700";
-        String password = "12345";
+        String controlador = "";
+        String url = "";
+        String user = "";
+        String password = "";
         
         try {
             Class.forName(controlador);
